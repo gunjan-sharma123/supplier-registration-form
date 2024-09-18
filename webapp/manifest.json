@@ -1,0 +1,116 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "com.supplierform.supplierregistrationform",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.15.0",
+      "toolsId": "a0d1fb08-ce2a-4510-818d-47f31278bb32"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.128.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.uxap": {}
+      }
+    },
+    "config": {
+			"sample": {
+				"stretch": true,
+				"files": [
+					"view/View1.view.xml",
+					"controller/blocks/myBlock.js",
+					"view/blocks/myBlock.view.xml",
+					"controller/blocks/SRQF.js",
+					"view/blocks/SRQF.view.xml",
+          "view/blocks/CIRD.view.xml",
+          "controller/blocks/CIRD.js",
+         
+					"manifest.json"
+				]
+			}
+		},
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.supplierform.supplierregistrationform.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "com.supplierform.supplierregistrationform.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RouteView1",
+          "pattern": ":?query:",
+          "target": [
+            "TargetView1"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetView1": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "View1",
+          "viewName": "View1"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.supplierform.supplierregistrationform.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}
