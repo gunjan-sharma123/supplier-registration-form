@@ -1,0 +1,17 @@
+<mvc:View
+		xmlns:forms="sap.ui.layout.form"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:html="http://www.w3.org/1999/xhtml"
+		xmlns="sap.m"
+	xmlns:m="sap.m" 
+    xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+ 	xmlns:unified="sap.ui.unified"
+		width="100%">
+	<html:div style="font-size: 0.875rem;">
+	
+
+	</html:div>
+</mvc:View>
+

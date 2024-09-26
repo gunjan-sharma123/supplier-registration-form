@@ -1,96 +1,129 @@
 <mvc:View
-		xmlns:forms="sap.ui.layout.form"
-		xmlns:mvc="sap.ui.core.mvc"
-		xmlns:html="http://www.w3.org/1999/xhtml"
-		xmlns="sap.m"
-	xmlns:m="sap.m" 
+    xmlns:forms="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns="sap.m"
+    xmlns:m="sap.m" 
     xmlns:l="sap.ui.layout"
-	xmlns:f="sap.ui.layout.form"
-	xmlns:core="sap.ui.core"
- 	xmlns:unified="sap.ui.unified"
-		width="100%">
-	<html:div style="font-size: 0.875rem;">
-		<!-- <forms:SimpleForm
-				maxContainerCols="2"
-				layout="ResponsiveGridLayout"
-				editable="false">
-			<Label text="Content"/>
-			<Text text="some content goes here..."/>
-		</forms:SimpleForm> -->
-		 <VBox class="sapUiSmallMargin">
-		<f:SimpleForm id="SimpleFormToolbar"
-			editable="true"
-			layout="ColumnLayout"
-			labelSpanXL="6"
-			labelSpanL="3"
-			labelSpanM="6"
-			labelSpanS="12"
-			adjustLabelSpan="false"
-			emptySpanXL="0"
-			emptySpanL="4"
-			emptySpanM="0"
-			emptySpanS="0"
-			columnsXL="1"
-			columnsL="1"
-			columnsM="1"
-			singleContainerFullSize="false"
-			ariaLabelledBy="Title1" >
-			<f:toolbar>
-				<Toolbar id="TB1">
-					<Title id="Title1" text="Supplier Registration Questionnaire Form"/>
-					<ToolbarSpacer />
-				</Toolbar>
-			</f:toolbar>
-			<f:content>
-			
-				<Label  text="Supplier Legal Full Name" required='true' />
-				<Input placeholder="SupplierName" />
-                	<!-- <MessageStrip type="Warning" text="Note:- Should be same as the legal name mentioned earlier "
-		class="" /> -->
-                <Label text="Supplier Organization Type" required='true' />
-				<Select id="country" selectedKey="Country" >
-					<items>
-						<core:Item text="Individual" key="Individual"/>
-						<core:Item text="Company" key="Company"/>
-                        <core:Item text="Partnership Firms" key="Partnership Firms"/>
-						<core:Item text="HUF" key="HUF"/>
-                        <core:Item text="Trust" key="Trust"/>
-						<core:Item text="LLP" key="LLP"/>
-                        <core:Item text="Local Authority" key="Local Authority"/>
-						<core:Item text="Government" key="Government"/>
-                        <core:Item text="Body of individuals" key="Body of individuals"/>
-					</items>
-				</Select>
-				<Label text="Main Telephone Number" />
-				<Input placeholder="Street">
-				</Input>
-				  <Label id="_IDGenLabel1" text="Do you accept the Mahindra code of business conduct?" />
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:unified="sap.ui.unified"
+    xmlns:upload="sap.m.upload"
+    width="100%">
+    <html:div style="font-size: 0.875rem;">
+        <VBox class="sapUiSmallMargin">
+            <f:SimpleForm id="SimpleFormToolbar"
+                editable="true"
+                layout="ColumnLayout"
+                labelSpanXL="6"
+                labelSpanL="3"
+                labelSpanM="6"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="0"
+                emptySpanL="4"
+                emptySpanM="0"
+                emptySpanS="0"
+                columnsXL="1"
+                columnsL="1"
+                columnsM="1"
+                singleContainerFullSize="false"
+                ariaLabelledBy="Title1" >
+                <f:toolbar>
+                    <Toolbar id="TB1">
+                        <Title id="Title1" text="Supplier Registration Questionnaire Form"/>
+                        <ToolbarSpacer />
+                    </Toolbar>
+                </f:toolbar>
+                <f:content>
+                    <Label  text="Supplier Legal Full Name" required='true' />
+                    <Input placeholder="SupplierName" />
+                    <Label text="Supplier Organization Type" required='true' />
+                    <Select id="country" selectedKey="Country" >
+                        <items>
+                            <core:Item text="Individual" key="Individual"/>
+                            <core:Item text="Company" key="Company"/>
+                            <core:Item text="Partnership Firms" key="Partnership Firms"/>
+                            <core:Item text="HUF" key="HUF"/>
+                            <core:Item text="Trust" key="Trust"/>
+                            <core:Item text="LLP" key="LLP"/>
+                            <core:Item text="Local Authority" key="Local Authority"/>
+                            <core:Item text="Government" key="Government"/>
+                            <core:Item text="Body of individuals" key="Body of individuals"/>
+                        </items>
+                    </Select>
+                    <Label text="Main Telephone Number" />
+                    <Input placeholder="Street"></Input>
+                    <Label id="_IDGenLabel1" text="Do you accept the Mahindra code of business conduct?" />
                     <RadioButtonGroup id="radioGroup" columns="2" selectedIndex="0">
                         <buttons>
                             <RadioButton id="_IDGenRadioButton1" text="Yes" />
                             <RadioButton id="_IDGenRadioButton2" text="No" />
                         </buttons>
                     </RadioButtonGroup>
-				
-				 <Label displayOnly="true"
-				wrapping="true" text="Please upload the Signed Copy of Accepted Supplier Code of Conduct Declaration." />
-        
-         <unified:FileUploader
-            id="fileUploader"
-            name="myFileUpload"
-            uploadUrl="your/upload/endpoint"
-            fileType="pdf,doc,docx"
-            change="handleFileChange"
-            buttonText="Upload File"
-            icon="sap-icon://upload"
-            width="300px"/>
-        
-       
-				<core:Title text="Vendor Evaluation" />
-				
-			</f:content>
-		</f:SimpleForm>
-	</VBox>
-	</html:div>
-</mvc:View>
+                    <Label displayOnly="true" wrapping="true" text="Please upload the Signed Copy of Accepted Supplier Code of Conduct Declaration." />
+                </f:content>
+            </f:SimpleForm>
 
+            <!-- Move UploadSet outside of SimpleForm -->
+            <VBox>
+                <unified:FileUploader
+                    id="fileUploader"
+                    name="myFileUpload"
+                    uploadUrl="your/upload/endpoint"
+                    fileType="pdf,doc,docx"
+                    change="handleFileChange"
+                    buttonText="Upload File"
+                    icon="sap-icon://upload"
+                    width="300px"/>
+                
+                  <upload:UploadSet
+					id="uploadSet"
+					instantUpload="false"
+					uploadEnabled="true"
+					afterItemAdded="onAfterItemAdded"
+                    uploadCompleted="onUploadCompleted"	
+					 class="customUploadSet"		
+					items="{
+								path: '/Files',
+								parameters: {
+									$orderby: 'createdAt desc'
+								},
+								templateShareable: false}"
+				>
+					<upload:toolbar>
+					</upload:toolbar>
+					<upload:items>
+						<upload:UploadSetItem
+							fileName="{fileName}"
+							mediaType="{mediaType}"
+							url="{url}"
+							enabledEdit="false"
+							visibleEdit="false"
+							openPressed="onOpenPressed"
+						>
+							<upload:attributes>
+								<ObjectAttribute
+									title="Uploaded By"
+									text="{createdBy}"
+									active="false"
+								/>
+								<ObjectAttribute
+									title="Uploaded on"
+									text="{createdAt}"
+									active="false"
+								/>
+								<ObjectAttribute
+									title="File Size"
+									text="{size}"
+									active="false"
+								/>
+							</upload:attributes>
+						</upload:UploadSetItem>
+					</upload:items>
+				</upload:UploadSet>
+            </VBox>
+
+        </VBox>
+    </html:div>
+</mvc:View>

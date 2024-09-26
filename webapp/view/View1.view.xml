@@ -57,6 +57,16 @@
 				</uxap:subSections>
 			</uxap:ObjectPageSection>
 
+			<uxap:ObjectPageSection titleUppercase="false" id="section5" title="Section 4">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection id="section5_SS2" title="Attachments" titleUppercase="false">
+						<uxap:blocks>
+							<sample:Attachments id="bbt6"/>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+
 		</uxap:sections>
 	</uxap:ObjectPageLayout>
 
